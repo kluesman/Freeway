@@ -1,0 +1,114 @@
+﻿<phone:PhoneApplicationPage
+    x:Class="Freeway.SearchPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}" Orientation="Portrait"
+    shell:SystemTray.Opacity="0"
+    shell:SystemTray.IsVisible="True"  
+    shell:SystemTray.ForegroundColor="#FEFFFFFF"
+    xmlns:Controls="clr-namespace:Microsoft.Phone.Maps.Controls;assembly=Microsoft.Phone.Maps"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit" OrientationChanged="SearchPage_OrientationChanged" SupportedOrientations="PortraitOrLandscape" Loaded="SearchPage_Loaded">
+    <phone:PhoneApplicationPage.Resources>
+
+    </phone:PhoneApplicationPage.Resources>
+
+    <toolkit:TransitionService.NavigationInTransition>
+        <toolkit:NavigationInTransition>
+            <toolkit:NavigationInTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideRightFadeIn"/>
+            </toolkit:NavigationInTransition.Backward>
+            <toolkit:NavigationInTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideLeftFadeIn"/>
+            </toolkit:NavigationInTransition.Forward>
+        </toolkit:NavigationInTransition>
+    </toolkit:TransitionService.NavigationInTransition>
+    <toolkit:TransitionService.NavigationOutTransition>
+        <toolkit:NavigationOutTransition>
+            <toolkit:NavigationOutTransition.Backward>
+                <toolkit:SlideTransition Mode="SlideRightFadeOut"/>
+            </toolkit:NavigationOutTransition.Backward>
+            <toolkit:NavigationOutTransition.Forward>
+                <toolkit:SlideTransition Mode="SlideLeftFadeOut"/>
+            </toolkit:NavigationOutTransition.Forward>
+        </toolkit:NavigationOutTransition>
+    </toolkit:TransitionService.NavigationOutTransition>
+
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid Background="black" Margin="-5">
+        <Grid x:Name="LayoutRoot" Background="black" Margin="0,24,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Height="72">
+                <StackPanel x:Name="stackSearch" HorizontalAlignment="Left" Orientation="Horizontal">
+                    <TextBox x:Name="txtSearch" Width="430" Margin="0,-6,-12,0" Padding="4,2,4,2" Height="72" BorderThickness="1" Grid.Column="1" KeyDown="txtSearch_KeyDown" Cursor="Arrow" Text="705 Hinman Ave, Evanston, IL" Foreground="Black" Background="#BFFFFFFF" BorderBrush="#BFFFFFFF"/>
+                    <Image x:Name="imgSearch" Width="64" Height="64" Margin="0,0,0,0" Source="/Assets/Images/Search.png" Tap="imgSearch_Tap"/>
+                </StackPanel>
+                <ProgressBar x:Name="progressBar" VerticalAlignment="Bottom" Foreground="WhiteSmoke" IsEnabled="false" Visibility="Collapsed" IsIndeterminate="false"/>
+            </Grid>
+            <Grid x:Name="VerticalSearch" Grid.Row="1" Visibility="Collapsed">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height=".3*"/>
+                    <RowDefinition Height=".7*"/>
+                </Grid.RowDefinitions>
+                <Controls:Map x:Name="VerticalMap" Grid.Row="0" ZoomLevel="16" IsEnabled="False"/>
+                <ListBox x:Name="VerticalResult" Grid.Row="1" SelectionChanged="VerticalResult_SelectionChanged" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Width="470" Height="100" Background="#1ABFBFBF" Margin="0,5,0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="72"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="72"/>
+                                </Grid.ColumnDefinitions>
+                                <Image CacheMode="BitmapCache" Grid.Column="0" Stretch="Uniform" Source="/Assets/Images/icons/Heart.png" />
+                                <Image CacheMode="BitmapCache" Grid.Column="2" Stretch="Uniform" Source="/Assets/Images/Navigate.png" Tap="Navigate_Tap"/>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <TextBlock Text="{Binding Address1}" FontSize="30" />
+                                    <TextBlock Text="{Binding Address2}" TextWrapping="Wrap" FontSize="20"/>
+                                    <TextBlock Text="{Binding Address3}" TextWrapping="Wrap" FontSize="20"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+            </Grid>
+            <Grid x:Name="HorizontalSearch" Grid.Row="1" Visibility="Collapsed" Background="Transparent">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="430"/>
+                </Grid.ColumnDefinitions>
+                <Controls:Map x:Name="HorizontalMap" Grid.Column="0" ZoomLevel="16" IsEnabled="False"/>
+                <ListBox x:Name="HorizontalResult" Grid.Column="1" SelectionChanged="HorizontalResult_SelectionChanged" >
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Height="100" Width="430" Background="#1ABFBFBF" Margin="0,5,0,5">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="72"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="72"/>
+                                </Grid.ColumnDefinitions>
+                                <Image CacheMode="BitmapCache" Grid.Column="0" Stretch="Uniform" Source="/Assets/Images/icons/Heart.png" />
+                                <Image CacheMode="BitmapCache" Grid.Column="2" Stretch="Uniform" Source="/Assets/Images/Navigate.png"  Tap="Navigate_Tap"/>
+                                <StackPanel Grid.Column="1" Margin="5,0,0,0">
+                                    <TextBlock Text="{Binding Address1}" FontSize="30" />
+                                    <TextBlock Text="{Binding Address2}" TextWrapping="Wrap" FontSize="20"/>
+                                    <TextBlock Text="{Binding Address3}" TextWrapping="Wrap" FontSize="20"/>
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+            </Grid>
+        </Grid>
+    </Grid>
+</phone:PhoneApplicationPage>

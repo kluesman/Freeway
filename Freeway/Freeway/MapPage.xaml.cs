@@ -29,7 +29,7 @@ namespace Freeway
         class RoutePoint
         {
             public RoutePoint(GeoCoordinate point, string instruct)
-            {
+            {GeoCoordinate
                 Geo_Coordinate = point;
                 instruction = instruct;
                 hasArrived = false;

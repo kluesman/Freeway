@@ -1,0 +1,19 @@
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\ApplicationIcon.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\Tiles\FlipCycleTileLarge.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\Tiles\FlipCycleTileMedium.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\Tiles\FlipCycleTileSmall.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\Tiles\IconicTileMediumLarge.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Assets\Tiles\IconicTileSmall.png
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\ThatConference Freeway.dll
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\ThatConference Freeway.pdb
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\AppManifest.xaml
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\Properties\WMAppManifest.xml
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\Bin\Release\ThatConference_Freeway_Release_AnyCPU.xap
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\App.g.cs
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\MainPage.g.cs
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\ThatConference Freeway.g.resources
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\ThatConference_Freeway.Resources.AppResources.resources
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\ThatConference Freeway.csproj.GenerateResource.Cache
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\ThatConference Freeway.dll
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\ThatConference Freeway.pdb
+C:\Version Control\Freeway\ThatConference Freeway\ThatConference Freeway\obj\Release\XapCacheFile.xml
